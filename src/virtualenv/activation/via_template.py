@@ -35,6 +35,7 @@ class ViaTemplateActivator(Activator, metaclass=ABCMeta):
             "__VIRTUAL_ENV__": str(creator.dest),
             "__VIRTUAL_NAME__": creator.env_name,
             "__BIN_NAME__": str(creator.bin_dir.relative_to(creator.dest)),
+            "__MAN_DIR_NAME__": os.path.join(creator.dest, 'share', 'man'),
             "__PATH_SEP__": os.pathsep,
         }
 

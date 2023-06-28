@@ -17,6 +17,11 @@ deactivate () {
         export PATH
         unset _OLD_VIRTUAL_PATH
     fi
+    if ! [ -z "${_OLD_VIRTUAL_MANPATH:+_}" ] ; then
+        MANPATH="$_OLD_VIRTUAL_MANPATH"
+        export MANPATH
+        unset _OLD_VIRTUAL_MANPATH
+    fi
     if ! [ -z "${_OLD_VIRTUAL_PYTHONHOME+_}" ] ; then
         PYTHONHOME="$_OLD_VIRTUAL_PYTHONHOME"
         export PYTHONHOME
@@ -53,6 +58,10 @@ export VIRTUAL_ENV
 _OLD_VIRTUAL_PATH="$PATH"
 PATH="$VIRTUAL_ENV/__BIN_NAME__:$PATH"
 export PATH
+
+_OLD_VIRTUAL_MANPATH="$MANPATH"
+MANPATH="__MAN_DIR_NAME__:$PATH"
+export MANPATH
 
 # unset PYTHONHOME if set
 if ! [ -z "${PYTHONHOME+_}" ] ; then
